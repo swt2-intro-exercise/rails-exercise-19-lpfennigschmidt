@@ -10,10 +10,17 @@ describe "Author Index", type: :feature do
 		end
 	end
 
-	#it "should have links referencing to authors" do
-	#	visit authors_path
-	#	expect(page).to have_text 'Show'
-	#end
+	it "should have links referencing to authors" do
+		Author.create(
+			first_name: 'Alan',
+			last_name: 'Turing',
+			homepage: 'https://wikipedia.org/Alan_Turing')
+		visit authors_path
+		save_and_open_page
+		within 'table' do
+			expect(page).to have_text 'Show'
+		end
+	end
 
 	it "should have a link to create new authors" do
 		visit authors_path
