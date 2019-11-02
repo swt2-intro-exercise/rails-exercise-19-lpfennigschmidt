@@ -12,4 +12,12 @@ describe "New author page", type: :feature do
   	expect(page).to have_field 'author[last_name]'
   	expect(page).to have_field 'author[homepage]'
   end
+
+  it "should error when entering invalid data" do
+  	visit new_author_path
+  	fill_in('author[first_name]', with: 'Alan')
+  	fill_in 'author[homepage]', with: 'http://wikipedia.org/Alan_Turing'
+  	click_button('Save Author')
+  	expect(page).to have_text('error')
+  end
 end
