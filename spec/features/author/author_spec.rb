@@ -20,6 +20,6 @@ describe "Author", type: :model do
 		homepage = 'http://wikipedia.org/Alan_Turing'
 
 		author = Author.new(first_name: first_name, last_name: last_name, homepage: homepage)
-		expect(author.full_name).to eq('Alan Turing')
+		expect(author.name).to eq('Alan Turing')
 	end
 end

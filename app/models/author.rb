@@ -6,7 +6,7 @@ class Author < ApplicationRecord
     validates :homepage, presence: true,
                     length: { minimum: 1 }
 
-	def full_name
-		full_name = first_name + " " + last_name
+	def name
+		first_name + " " + last_name
 	end
 end
