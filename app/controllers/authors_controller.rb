@@ -17,6 +17,13 @@ class AuthorsController < ApplicationController
     end
   end
 
+  def destroy
+    @author = Author.find(params[:id])
+    @author.destroy
+ 
+    redirect_to authors_path
+  end
+
 	def index
 		@authors = Author.all 
 	end
