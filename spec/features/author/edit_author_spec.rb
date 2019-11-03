@@ -4,7 +4,6 @@ describe "Editing Author" do
 			first_name: 'Alan',
 			last_name: 'Turing',
 			homepage: 'https://wikipedia.org/Alan_Turing')
-		#visit authors_path
 		visit 'authors/1/edit'
 	end
 

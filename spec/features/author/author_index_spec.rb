@@ -26,4 +26,5 @@ describe "Author Index", type: :feature do
 		visit authors_path
 		expect(page).to have_link 'New Author', href: new_author_path
 	end
+
 end
