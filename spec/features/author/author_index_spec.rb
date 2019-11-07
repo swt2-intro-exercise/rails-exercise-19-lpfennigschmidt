@@ -16,7 +16,7 @@ describe "Author Index", type: :feature do
 			last_name: 'Turing',
 			homepage: 'https://wikipedia.org/Alan_Turing')
 		visit authors_path
-		save_and_open_page
+		# save_and_open_page
 		within 'table' do
 			expect(page).to have_text 'Show'
 		end

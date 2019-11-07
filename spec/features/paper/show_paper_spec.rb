@@ -1,6 +1,7 @@
 describe "Show Paper" do
 
 	before :each do
+		@author = create(:author)
 		@paper = create(:paper)
 	end
 
@@ -12,10 +13,10 @@ describe "Show Paper" do
 
 	end
 
-	#it "should display the authors of the paper" do
-	#	visit 'papers/1/'
-	#	expect(page).to have_text(@paper.authors)
-	#end
+	it "should display the authors of the paper" do
+		visit 'papers/1/'
+		expect(page).to have_text(@author.name)
+	end
 
 	it "should have a button for editing the paper" do
 		visit 'papers/1/'
